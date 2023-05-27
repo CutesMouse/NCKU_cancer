@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>試著做自己的決定</title>
+    <link rel="stylesheet" href="style/background.css">
+    <link rel="stylesheet" href="style/content.css">
+    <link rel="stylesheet" href="style/decision.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <script src="script/decision.js"></script>
+    <link rel="icon" href="/resources/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div class="menu" onclick="window.open('dictionary.html', '_self')">
+    <img class="menu-logo" src="resources/menu.png" alt="回首頁"/>
+</div>
+
+<span class="paragraph img-title-span">
+<img class="img-title" src="resources/decision/decision.png" alt="試著做自己的決定"/>
+</span>
+<span class="paragraph point">您現在確認好治療方式了嗎?</span>
+<div class="checkblock">
+    <div class="checkbox" onclick="check(0)" id="cb0">接受化學治療</div>
+    <div class="checkbox" onclick="check(1)" id="cb1">接受免疫療法 + 化學治療</div>
+    <div class="checkbox multiple_checkbox" onclick="check(2)" id="cb2">我目前還無法決定</div>
+    <div class="multiple_element hidden">
+        <div class="child checkbox" onclick="children_check(3)" id="cb3">我想要再與我的主治醫師討論我的決定</div>
+        <div class="child checkbox" onclick="children_check(4)" id="cb4">我想要再與其他人 (包含配偶、家人、朋友或第二意見提供者...) 討論
+        </div>
+        <div class="child checkbox" onclick="children_check(5)" id="cb5">對於以上的治療方式，我想要再瞭解更多，我的問題是...</div>
+    </div>
+</div>
+<button onclick="submit()">下一步</button>
+</body>
+</html>

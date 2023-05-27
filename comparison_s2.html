@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>治療選項比較</title>
+    <script src="script/comparison_score.js"></script>
+    <link rel="stylesheet" href="style/background.css">
+    <link rel="stylesheet" href="style/content.css">
+    <link rel="stylesheet" href="style/understanding.css">
+    <link rel="stylesheet" href="style/comparison_s2.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <link rel="icon" href="/resources/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div class="menu" onclick="window.open('dictionary.html', '_self')">
+    <img class="menu-logo" src="resources/menu.png" alt="回首頁"/>
+</div>
+<span class="paragraph img-title-span">
+<img class="img-title" src="resources/comparison/step_2.png" alt="步驟二 從以下兩種治療中選擇您比較可以接受的"/>
+</span>
+<div id="fee" class="hidden">
+    <span class="paragraph img-title-span">
+    <img class="img-title" src="resources/comparison/determine/fee_determine.png" alt="費用"/>
+    </span>
+    <span class="paragraph point"><span class="highlight">費用</span>部分，每三周一次，一個療程費用如下</span>
+    <span class="paragraph point highlight">如果有保險，提醒自費部分可以跟保險公司討論是否給付</span>
+    <span class="paragraph point"><span class="highlight">免疫療法價格計算機</span></span>
+    <div class="calculator">
+        <label>單次價格<input type="number" id="a" value="120000"></label>
+        <label>療程次數<input type="number" id="b" value="6"></label>
+        <button class="calc" onclick="calc_money()">計算</button>
+        <span id="fee_result"></span>
+    </div>
+    <img class="attachment" src="resources/comparison/determine/fee_table.png" alt="化療vs免疫+化療"/>
+    <span class="paragraph point highlight">請進行您的選擇</span>
+    <div class="option-block">
+        <img class="option option-small" src="resources/understanding/option_chemistry.png" alt="我選擇化學治療" onclick="select('fee', 0)"/>
+        <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療" onclick="select('fee', 1)"/>
+    </div>
+</div>
+
+<div id="effect" class="hidden">
+    <span class="paragraph img-title-span">
+    <img class="img-title" src="resources/comparison/determine/effect_determine.png" alt="療效"/>
+    </span>
+    <span class="paragraph point"><span class="highlight">治療效果</span> (手術後病理報告顯示無殘存乳癌)</span>
+    <img class="attachment" src="resources/comparison/determine/effect_chart.png" alt="療效圖"/>
+    <span class="paragraph point highlight">請進行您的選擇</span>
+    <div class="option-block">
+        <img class="option option-small" src="resources/understanding/option_chemistry.png" alt="我選擇化學治療" onclick="select('effect', 0)"/>
+        <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療" onclick="select('effect', 1)"/>
+    </div>
+</div>
+
+<div id="side-effect" class="hidden">
+    <span class="paragraph img-title-span">
+    <img class="img-title" src="resources/comparison/determine/side_effect_determine.png" alt="療效"/>
+    </span>
+    <span class="paragraph point"><span class="highlight">副作用比較</span></span>
+    <img class="attachment" src="resources/comparison/determine/side_effect_table.png" alt="副作用圖"/>
+    <span class="paragraph point highlight">請進行您的選擇</span>
+    <div class="option-block">
+        <img class="option option-small" src="resources/understanding/option_chemistry.png" alt="我選擇化學治療" onclick="select('side-effect', 0)"/>
+        <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療" onclick="select('side-effect', 1)"/>
+    </div>
+</div>
+<button onclick="submit()">我選好了</button>
+</body>
+</html>

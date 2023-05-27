@@ -1,0 +1,41 @@
+.option-block {
+    display: inline-block;
+}
+
+.option {
+    display: inline-block;
+    height: auto;
+    transition: all 0.5s;
+    filter: grayscale(90%);
+    cursor: pointer;
+    padding: 2vw;
+    border-radius: 2vw;
+}
+
+.option:hover {
+    filter: grayscale(0);
+}
+
+
+.option-large {
+    max-width: 45vw;
+}
+
+.option-small {
+    max-width: 27vw;
+}
+
+body {
+    text-align: center;
+}
+
+.selected {
+    background: repeating-linear-gradient(
+            45deg,
+            #ffc3d9,
+            #ffc3d9 10px,
+            #ff4a4a 10px,
+            #ff4a4a 20px
+    );
+    filter: grayscale(0);
+}

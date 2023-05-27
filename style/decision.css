@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+}
+
+.checkbox {
+    font-family: "微軟正黑體", serif;
+    font-weight: bolder;
+    font-size: 40px;
+    margin: 20px;
+    text-align: left;
+}
+
+.checkbox::before {
+    content: attr(pref);
+    width: 70px;
+    height: 70px;
+    margin: 20px;
+}
+
+.multiple_element .checkbox {
+    margin-left: 90px;
+}
+
+.checkblock {
+    margin-left: 80px;
+}
+
+.checkbox:hover {
+    color: gray;
+}
+
+.checkbox[checked=true] {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}

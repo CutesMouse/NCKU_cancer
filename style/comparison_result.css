@@ -1,0 +1,49 @@
+body {
+    text-align: center;
+}
+
+table {
+    font-family: "微軟正黑體", serif;
+    display: inline-block;
+}
+
+thead {
+    font-weight: bolder;
+    font-family: "微軟正黑體", serif;
+}
+
+tr {
+    font-size: 40px;
+    min-width: 80vw;
+    height: 5vw;
+    border: 1px solid #eeeeee;
+    vertical-align: middle;
+    align-items: center;
+}
+
+th {
+    font-family: "微軟正黑體", serif;
+    width: 30vw;
+    text-align: left;
+    padding: 1%;
+}
+
+td {
+    width: 25vw;
+}
+
+thead td {
+    padding: 1%;
+}
+
+thead tr {
+    background-color: rgb(191, 224, 213);
+}
+
+tbody tr:nth-child(2n+1) {
+    background-color: rgb(236, 255, 246);
+}
+
+tbody tr:nth-child(2n) {
+    background-color: rgb(255, 255, 255);
+}
