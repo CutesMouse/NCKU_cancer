@@ -1,0 +1,47 @@
+.fee-img {
+    border: #ff5a1f solid 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.fee-img-sel0 {
+    background: linear-gradient(#ffffff, #ffffff), repeating-linear-gradient( 45deg, #ffc3d9, #ffc3d9 10px, #ff4a4a 10px, #ff4a4a 20px ), linear-gradient(#FFFFFF, #FFFFFF);
+    background-size: 15.6% 100%, 50%, 100%;
+    background-repeat: no-repeat;
+}
+
+.fee-img-sel1 {
+    background: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff), repeating-linear-gradient(45deg, #ffc3d9, #ffc3d9 10px, #ff4a4a 10px, #ff4a4a 20px);
+    background-size: 15.6% 100%, 50%, 100%;
+    background-repeat: no-repeat;
+}
+
+.effect-img {
+    border: #ff5a1f solid 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.effect-img-sel0 {
+    background: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff),
+    repeating-linear-gradient( 45deg, #ffc3d9, #ffc3d9 10px, #ff4a4a 10px, #ff4a4a 20px ), linear-gradient(#ffffff, #ffffff),
+    linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff),
+    linear-gradient(#ffffff, #ffffff);
+    background-size: 19.6% 100%, 51.2% 30.34%, 51.2% 100%, 57.5% 100%, 89% 23.5%, 89% 100%, 100%;
+    background-repeat: no-repeat;
+}
+
+.effect-img-sel1 {
+    background: linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff),
+    linear-gradient(#ffffff, #ffffff), linear-gradient(#ffffff, #ffffff),
+    linear-gradient(#ffffff, #ffffff), repeating-linear-gradient( 45deg, #ffc3d9, #ffc3d9 10px, #ff4a4a 10px, #ff4a4a 20px ),
+    linear-gradient(#ffffff, #ffffff);
+    background-size: 20.2% 100%, 50.5% 30.34%, 50.5% 100%, 57.5% 100%, 89.6% 23.5%, 89.4% 100%, 100%;
+    background-repeat: no-repeat;
+}
+
+.side-effect-img {
+    border: #ff5a1f solid 5px;
+    background: white;
+    cursor: pointer;
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/understanding.css">
     <link rel="stylesheet" href="style/comparison_s2.css">
     <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/imgbutton.css">
     <link rel="icon" href="/resources/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
@@ -31,12 +32,8 @@
         <button class="calc" onclick="calc_money()">計算</button>
         <span id="fee_result"></span>
     </div>
-    <img class="attachment" src="resources/comparison/determine/fee_table.png" alt="化療vs免疫+化療"/>
     <span class="paragraph point highlight">請進行您的選擇</span>
-    <div class="option-block">
-        <img class="option option-small" src="resources/understanding/option_chemistry.png" alt="我選擇化學治療" onclick="select('fee', 0)"/>
-        <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療" onclick="select('fee', 1)"/>
-    </div>
+    <img class="attachment fee-img" src="resources/comparison/determine/fee_table.png" alt="化療vs免疫+化療"/>
 </div>
 
 <div id="effect" class="hidden">
@@ -44,25 +41,17 @@
     <img class="img-title" src="resources/comparison/determine/effect_determine.png" alt="療效"/>
     </span>
     <span class="paragraph point"><span class="highlight">治療效果</span> (手術後病理報告顯示無殘存乳癌)</span>
-    <img class="attachment" src="resources/comparison/determine/effect_chart.png" alt="療效圖"/>
     <span class="paragraph point highlight">請進行您的選擇</span>
-    <div class="option-block">
-        <img class="option option-small" src="resources/understanding/option_chemistry.png" alt="我選擇化學治療" onclick="select('effect', 0)"/>
-        <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療" onclick="select('effect', 1)"/>
-    </div>
+    <img class="attachment effect-img" src="resources/comparison/determine/effect_chart.png" alt="療效圖"/>
 </div>
 
 <div id="side-effect" class="hidden">
     <span class="paragraph img-title-span">
-    <img class="img-title" src="resources/comparison/determine/side_effect_determine.png" alt="療效"/>
+    <img class="img-title" src="resources/comparison/determine/side_effect_determine.png" alt="副作用"/>
     </span>
     <span class="paragraph point"><span class="highlight">副作用比較</span></span>
-    <img class="attachment" src="resources/comparison/determine/side_effect_table.png" alt="副作用圖"/>
     <span class="paragraph point highlight">請進行您的選擇</span>
-    <div class="option-block">
-        <img class="option option-small" src="resources/understanding/option_chemistry.png" alt="我選擇化學治療" onclick="select('side-effect', 0)"/>
-        <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療" onclick="select('side-effect', 1)"/>
-    </div>
+    <img class="attachment side-effect-img" src="resources/comparison/determine/side_effect_table.png" alt="副作用圖"/>
 </div>
 <button onclick="submit()">我選好了</button>
 </body>

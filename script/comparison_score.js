@@ -5,6 +5,11 @@ if (!URL.includes('?care=')) {
 }
 let order = URL.split('?care=')[1];
 let content = [];
+let form = {
+    "fee": undefined,
+    "effect": undefined,
+    "side-effect": undefined
+}
 for (let i = 0; i < order.length; i++) {
     let item = "";
     switch (order[i]) {
@@ -23,7 +28,25 @@ for (let i = 0; i < order.length; i++) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    content.forEach(item => document.querySelector('#' + item).classList.remove('hidden'))
+    content.forEach(item => document.querySelector('#' + item).classList.remove('hidden'));
+    content.forEach(item => document.querySelector('.' + item + "-img").addEventListener('click', function(e) {
+        let p_w = e.offsetX / document.querySelector('.' + item + "-img").width;
+        let p_h = e.offsetY / document.querySelector('.' + item + "-img").height;
+        switch (item) {
+            case 'fee':
+                if (p_w >= 0.156 && p_w <= 0.5) select(item, 0);
+                if (p_w > 0.5) select(item, 1);
+                break;
+            case 'effect':
+                if (p_w >= 0.202 && p_w <= 0.505 && p_h >= 0.304) select(item, 0);
+                if (p_w >= 0.575 && p_w <= 0.89 && p_h >= 0.235) select(item, 1);
+                break;
+            case 'side-effect':
+                if (p_w >= 0.489 && p_w <= 0.713) select(item, 0);
+                if (p_w > 0.713) select(item, 1);
+                break;
+        }
+    }))
 }, false);
 
 //calc
@@ -33,11 +56,14 @@ function calc_money() {
 }
 
 function select(title, id) {
-    document.querySelectorAll('#' + title +' .option')
-        .forEach(element => element.classList.remove('selected'));
+    form[title] = id;
+    if (title === 'side-effect') {
+        document.querySelector('.side-effect-img').setAttribute('src', 'resources/comparison/determine/side_effect_table_sel'+id+'.png')
+    }
+    document.querySelectorAll('.' + title +'-img')
+        .forEach(element => element.classList.remove(title+'-img-sel0', title + '-img-sel1'));
 
-    let selected = '#' + title +' .option' + (id === 0 ? '.option-small' : '.option-large');
-    document.querySelector(selected).classList.add('selected');
+    document.querySelector('.' + title +'-img').classList.add(title + '-img-sel' + id);
 }
 
 function submit() {
@@ -51,14 +77,13 @@ function submit() {
         "side-effect": "副作用"
     }
     content.forEach(item => {
-        let select = document.querySelector('#' + item + " " + ".selected");
-        if (select == null) {
+        let select = form[item];
+        if (select === undefined) {
             valid = false;
             not_yet = dictionary[item];
             return;
         }
-        let option = select.classList.contains('option-large') ? 1 : 0;
-        data.push(item + "=" + option);
+        data.push(item + "=" + select);
     });
     if (valid) {
         window.open('comparison_s3.html?'+data.join('&'), '_self');
