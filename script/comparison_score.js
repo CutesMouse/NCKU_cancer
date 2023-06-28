@@ -3,33 +3,28 @@ let URL = document.URL;
 if (!URL.includes('?care=')) {
     window.open('comparison_s1.html', '_self')
 }
-let order = URL.split('?care=')[1];
-let content = [];
-let form = {
-    "fee": undefined,
-    "effect": undefined,
-    "side-effect": undefined
+let order = URL.split('?care=')[1].split('&')[0];
+let data_saved = URL.includes('&') ? URL.substring(URL.indexOf('&')) : '';
+let item;
+let sel = undefined;
+
+switch (order[0]) {
+    case 'f':
+        item = "fee";
+        break;
+    case 'e':
+        item = "effect";
+        break;
+    case 's':
+        item = "side-effect";
+        break;
 }
-for (let i = 0; i < order.length; i++) {
-    let item = "";
-    switch (order[i]) {
-        case 'f':
-            item = "fee";
-            break;
-        case 'e':
-            item = "effect";
-            break;
-        case 's':
-            item = "side-effect";
-            break;
-    }
-    content.push(item);
-}
+order = order.substring(1);
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    content.forEach(item => document.querySelector('#' + item).classList.remove('hidden'));
-    content.forEach(item => document.querySelector('.' + item + "-img").addEventListener('click', function(e) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#' + item).classList.remove('hidden');
+    document.querySelector('.' + item + "-img").addEventListener('click', function (e) {
         let p_w = e.offsetX / document.querySelector('.' + item + "-img").width;
         let p_h = e.offsetY / document.querySelector('.' + item + "-img").height;
         switch (item) {
@@ -46,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (p_w > 0.713) select(item, 1);
                 break;
         }
-    }))
+    });
 }, false);
 
 //calc
@@ -56,38 +51,26 @@ function calc_money() {
 }
 
 function select(title, id) {
-    form[title] = id;
+    sel = id;
     if (title === 'side-effect') {
-        document.querySelector('.side-effect-img').setAttribute('src', 'resources/comparison/determine/side_effect_table_sel'+id+'.png')
+        document.querySelector('.side-effect-img').setAttribute('src', 'resources/comparison/determine/side_effect_table_sel' + id + '.png')
     }
-    document.querySelectorAll('.' + title +'-img')
-        .forEach(element => element.classList.remove(title+'-img-sel0', title + '-img-sel1'));
+    document.querySelectorAll('.' + title + '-img')
+        .forEach(element => element.classList.remove(title + '-img-sel0', title + '-img-sel1'));
 
-    document.querySelector('.' + title +'-img').classList.add(title + '-img-sel' + id);
+    document.querySelector('.' + title + '-img').classList.add(title + '-img-sel' + id);
 }
 
 function submit() {
     //確認填寫狀況
-    let valid = true;
-    let data = [];
-    let not_yet = undefined;
-    let dictionary = {
-        "fee": "費用",
-        "effect": "療效",
-        "side-effect": "副作用"
+    if (sel === undefined) {
+        alert('請進行選擇！');
+        return;
     }
-    content.forEach(item => {
-        let select = form[item];
-        if (select === undefined) {
-            valid = false;
-            not_yet = dictionary[item];
-            return;
-        }
-        data.push(item + "=" + select);
-    });
-    if (valid) {
-        window.open('comparison_s3.html?'+data.join('&'), '_self');
-    } else {
-        alert('您尚未填寫 ' + not_yet);
+    data_saved += "&" + item + "=" + sel;
+    if (order.length === 0) {
+        window.open('comparison_s3.html?' + data_saved.substring(1), '_self');
+        return;
     }
+    window.open('comparison_s2.html?care=' + order + data_saved, '_self');
 }
