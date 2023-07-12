@@ -1,12 +1,19 @@
+body {
+    width: 97vw;
+    height: 97vh;
+}
+
 .title_box {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    text-align: center;
-    margin: 3%;
+    height: 100%;
+    align-items: center;
 }
 
 .line {
-    display: block;
+    display: inline-block;
     text-shadow: 0.01em 0.1em 0.2em rgba(0, 0, 0, 0.5);
     -webkit-text-stroke-width: 0.01em;
     -webkit-text-stroke-color: white;
@@ -21,5 +28,5 @@
     min-height: 10vh;
     font-size: 70px;
     padding: 30px;
-    margin-top: 20px;
+    margin-top: 10%;
 }
