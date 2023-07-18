@@ -51,6 +51,7 @@ function calc_money() {
 }
 
 function select(title, id) {
+    document.querySelectorAll('.click_hint').forEach(i => i.remove());
     sel = id;
     if (title === 'side-effect') {
         document.querySelector('.side-effect-img').setAttribute('src', 'resources/comparison/determine/side_effect_table_sel' + id + '.png')
