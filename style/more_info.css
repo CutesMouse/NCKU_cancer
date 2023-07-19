@@ -10,7 +10,8 @@ body {
 .info_box img {
     object-fit: contain;
     display: block;
-    max-height: 60vh;
+    max-height: 45vh;
     width: auto;
     height: auto;
+    cursor: pointer;
 }
