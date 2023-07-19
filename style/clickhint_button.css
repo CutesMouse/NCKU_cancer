@@ -6,7 +6,7 @@
     left: 30%;
     transform: rotate(-45deg) translateY(-90px);
     animation-name: hint;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     margin-bottom: -126px;
@@ -14,7 +14,7 @@
 
 @keyframes hint {
     0% {
-        opacity: 0;
+        opacity: 30%;
     }
     100% {
         opacity: 100%;
@@ -34,7 +34,7 @@
 
 .dictionary_button {
     position: absolute;
-    left: -5vw;
+    left: 15vw;
     top: 0;
 }
 
