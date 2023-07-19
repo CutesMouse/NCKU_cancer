@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/content.css">
     <link rel="stylesheet" href="style/understanding.css">
     <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/clickhint_button.css">
     <script src="script/understanding.js"></script>
     <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
 </head>
@@ -21,6 +22,12 @@
     <img class="option option-large" src="resources/understanding/option_mixed.png" alt="我選擇免疫療法+化學治療"
          onclick="select(1)"/>
 </div>
-<button onclick="to_comparison()">醫療選項比較</button>
+<div class="click_hint understanding_button"></div>
+
+
+<div class="button_block">
+    <button onclick="to_comparison()">醫療選項比較</button>
+    <div class="click_hint content_button next hidden"></div>
+</div>
 </body>
 </html>

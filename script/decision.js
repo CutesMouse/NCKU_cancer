@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false);
 
 function check(id) {
+    document.querySelectorAll('.next').forEach(item => item.classList.remove('hidden'));
+    document.querySelectorAll('.decision').forEach(item => item.remove());
     document.querySelectorAll('.checkbox')
         .forEach(item => item.setAttribute('checked', "false"));
     document.querySelector('#cb' + id).setAttribute('checked',"true");

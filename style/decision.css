@@ -8,6 +8,7 @@ body {
     font-size: 40px;
     margin: 20px;
     text-align: left;
+    z-index: 999;
 }
 
 .checkbox::before {
@@ -23,6 +24,10 @@ body {
 
 .checkblock {
     margin-left: 80px;
+}
+
+.checkbox {
+    cursor: pointer;
 }
 
 .checkbox:hover {

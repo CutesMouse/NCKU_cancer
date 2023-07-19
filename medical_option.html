@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/content.css">
     <link rel="stylesheet" href="style/medical_option.css">
     <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/clickhint_button.css">
     <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
@@ -24,10 +25,16 @@
 <img class="img-title" src="resources/therapy/mixed.png" alt="化學治療"/>
 </span>
 <span class="paragraph point">免疫療法是指讓人體自己的免疫力辨認出癌細胞，攻擊癌細胞。</span>
-<span class="paragraph point">免疫療法療程為<span class="highlight">每三個星期一次</span>，術前輔助治療預計執行 <span class="highlight">8 個療程</span>。</span>
-<span class="paragraph point"><span class="highlight">需要搭配化學治療，一個星期或三個星期為一個循環</span>，預計執行 <span class="highlight">8個療程</span>。</span>
+<span class="paragraph point">免疫療法療程為<span class="highlight">每三個星期一次</span>，術前輔助治療預計執行 <span
+        class="highlight">8 個療程</span>。</span>
+<span class="paragraph point"><span
+        class="highlight">需要搭配化學治療，一個星期或三個星期為一個循環</span>，預計執行 <span
+        class="highlight">8個療程</span>。</span>
 
 <img class="attachment" src="resources/therapy/immune_system.png" height="405" width="1658" alt="免疫療程"/>
-<button onclick="window.open('understanding.html', '_self')">了解您的想法</button>
+<div class="button_block">
+    <button onclick="window.open('understanding.html', '_self')">了解您的想法</button>
+    <div class="click_hint content_button"></div>
+</div>
 </body>
 </html>

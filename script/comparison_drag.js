@@ -38,6 +38,8 @@ $(function () {
         },
         update: function (event, ui) {
             update_stats();
+            $('.drag').remove();
+            $('.next').removeClass('hidden');
         }
     }).disableSelection();
 

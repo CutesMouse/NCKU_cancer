@@ -5,6 +5,7 @@
     <title>試著做自己的決定</title>
     <link rel="stylesheet" href="style/background.css">
     <link rel="stylesheet" href="style/content.css">
+    <link rel="stylesheet" href="style/clickhint_button.css">
     <link rel="stylesheet" href="style/decision.css">
     <link rel="stylesheet" href="style/menu.css">
     <script src="script/decision.js"></script>
@@ -20,7 +21,7 @@
 </span>
 <span class="paragraph point">您現在確認好治療方式了嗎?</span>
 <div class="checkblock">
-    <div class="checkbox" onclick="check(0)" id="cb0">接受化學治療</div>
+    <div class="checkbox" onclick="check(0)" id="cb0">接受化學治療<div class="click_hint decision"></div></div>
     <div class="checkbox" onclick="check(1)" id="cb1">接受免疫療法 + 化學治療</div>
     <div class="checkbox multiple_checkbox" onclick="check(2)" id="cb2">我目前還無法決定</div>
     <div class="multiple_element hidden">
@@ -30,6 +31,10 @@
         <div class="child checkbox" onclick="children_check(5)" id="cb5">對於以上的治療方式，我想要再瞭解更多，我的問題是...</div>
     </div>
 </div>
-<button onclick="submit()">下一步</button>
+<div class="button_block">
+    <button onclick="submit()">下一步</button>
+    <div class="hidden click_hint content_button next"></div>
+</div>
+
 </body>
 </html>

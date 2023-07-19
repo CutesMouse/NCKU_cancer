@@ -6,39 +6,6 @@
     margin: 0 auto;
 }
 
-.click_hint {
-    background: url("../resources/click_hint.png");
-    width: 98px;
-    height: 126px;
-    position: absolute;
-    right: 5vw;
-    transform: rotate(-45deg) translateY(-50px);
-    animation-name: hint;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes hint {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 100%;
-    }
-}
-
-.click_hint::before {
-    position: absolute;
-    content: "點擊進行選擇";
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    color: white;
-    font-size: 40px;
-    width: 240px;
-    transform: rotate(45deg) translateX(-80px) translateY(30px);
-}
-
 .fee-img-sel0 {
     background: linear-gradient(#ffffff, #ffffff), repeating-linear-gradient(45deg, #ffc3d9, #ffc3d9 10px, #ff4a4a 10px, #ff4a4a 20px), linear-gradient(#FFFFFF, #FFFFFF);
     background-size: 15.6% 100%, 50%, 100%;

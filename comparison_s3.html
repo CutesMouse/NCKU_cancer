@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/content.css">
     <link rel="stylesheet" href="style/comparison.css">
     <link rel="stylesheet" href="style/menu.css">
+    <link rel="stylesheet" href="style/clickhint_button.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="script/comparison_drag.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -26,6 +27,10 @@
     <li class="option effect" prefix="★★" id="effect">療效</li>
     <li class="option side-effect" prefix="★" id="side-effect">副作用</li>
 </ul>
-<button class="finish">我選好了</button>
+<div class="click_hint drag"></div>
+<div class="button_block">
+    <button class="finish">我選好了</button>
+    <div class="click_hint content_button next hidden"></div>
+</div>
 </body>
 </html>
